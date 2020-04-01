@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <script src="map/maptastic.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+</head>
+
+<body>
+
+  <!-- this canvas is to completely hide the unmappable original hydra canvas -->
+  <canvas id="black"></canvas>
+
+<!-- call to hydra bundle and p5 sketches -->
+  <script type="text/javascript" src="js/bundle.js"></script>
+
+  <!-- this canvas doesn't link with js, if uncommented it creates an empty canvas -->
+  <!-- <canvas id="hydra-canvas"></canvas> -->
+
+
+<!-- MAPPING -->
+
+<!-- hit the enter key twice
+     shift + spacebar
+     you're ready to map
+     shift + spacebar to exit the mapping-->
+
+  <script type="text/javascript">
+    document.body.addEventListener("keydown", function(event) {
+      if (event.keyCode == 13) {
+        alert("You're ready to map");
+        const configObject = {
+          autoSave: false,
+          autoLoad: false,
+          // onchange: myChangeHandler,
+          layers: ['defaultCanvas0', 'defaultCanvas1']
+        };
+        const map = new maptastic.Maptastic(configObject);
+      }
+    });
+  </script>
+</body>
+</html>
