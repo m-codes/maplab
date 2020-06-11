@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=“UTF-8”>
+  <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no" />
+  <!-- - - - - - - - - - - - - - - - -  -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue-teal.min.css" />
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- - - - - - - - - - - - - - - - -  -->
+  <script src="maptastic.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+  <!-- - - - - - - - - - - - - - - - -  -->
+  <script src="https://unpkg.com/hydra-synth"></script>
+</head>
+
+<body style="background-color:black;">
+  <div id="toggle" class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">Maplab🧪</span>
+      <nav class="mdl-navigation">
+        <!-- GET STARTED SECTION -->
+        <a class=" collapsible mdl-button mdl-button--accent mdl-js-button mdl-js-ripple-effect">Get Started</a>
+        <div class="content">
+          <p class="big">Hi & welcome to Maplab!🥳</p>
+          <a href="url"><p class="big">▶️Click here for a short tutorial on how to use the app</p></a>
+          <p class="big">Easy as 1️⃣2️⃣3️⃣</p>
+          <p class="big">1️⃣Choose your favourite pattern from the columns below.</p>
+          <p class="big">2️⃣Add as many canvases as you like and hit ENTER and SPACE to go on full screen mode and map the canvases onto real world objects</p>
+          <p class="big">3️⃣Adjust the reactivity of the patterns using the sound controls sliders with the help of the spectrum analyser.</p>
+          <p class="big">Main commands:</p>
+          <p class="big"><b>ENTER</b> ➡️ toggle on/off the full screen mode</p>
+          <p class="big"><b>SPACE</b> ➡️ toggle on/off the mapping mode</p>
+          <p class="big">Commands in mapping mode:</p>
+          <p class="big"><b>SHIFT+drag</b> ➡️ move the selected point precisely</p>
+          <p class="big"><b>R</b> ➡️ rotate the selected layer 90 degrees</p>
+          <p class="big"><b>H</b> ➡️ flip the selected layer horizontally</p>
+          <p class="big"><b>V</b> ➡️ flip the selected layer vertically</p>
+          <p class="big"><b>B</b> ➡️ show/hide projector bounds</p>
+          <p class="big">Made with ♡ <br> in London</p>
+        </div>
+        <br>
+        <!-- PATTERNS SECTION -->
+        <div class="centred">
+          <p id="tt1" class="big">PATTERNS</p>
+          <div class="mdl-tooltip mdl-tooltip--large" for="tt1">CHOOSE A PATTERN BELOW</div>
+
+          <div class="row">
+            <div class="column">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="p.p19()">Flame</a>
+            </div>
+            <div class="column">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="p.p1()">Acid</a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="column">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="p.p2()">Neon</a>
+            </div>
+            <div class="column">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="p.p3()">Tile</a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="column">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="p.p4()">Bloom</a>
+            </div>
+            <div class="column">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="p.p5()">Tunnel</a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="column">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="p.p6()">Ripple</a>
+            </div>
+            <div class="column">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="p.p7()">Hall</a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="column">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="p.p8()">Cell</a>
+            </div>
+            <div class="column">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="p.p9()">Dye</a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="column">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="p.p10()">Field</a>
+            </div>
+            <div class="column">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="p.p11()">Scratch</a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="column">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="p.p12()">Disco</a>
+            </div>
+            <div class="column">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="p.p13()">Iris</a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="column">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="p.p18()">Ghost</a>
+            </div>
+            <div class="column">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="p.p17()">Dot</a>
+            </div>
+          </div>
+
+          <div class="kcolumn">
+            <a class=" collapsible mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="p.p0()"> Kaleid</a>
+            <div class="range-wrap content">
+              <p>Nº of reflections</p>
+              <input id="kaleidSlider" class="" type="range" min="2" max="10" value="4" step="1" data-thumbwidth="20">
+              <output name="rangeVal"></output>
+            </div>
+          </div>
+        </div>
+
+        <!-- CANVAS CONTROLS SECTION -->
+        <div class="centred">
+          <p class="big">CANVAS CONTROLS</p>
+          <div class="wrapper">
+            <!-- Colored FAB button with ripple -->
+            <button id="tt2" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored button" onclick="addCanvas()">
+              <i class="material-icons">add</i>
+              <div class="mdl-tooltip mdl-tooltip--large" for="tt2">add canvas</div>
+            </button>
+            <!-- Colored FAB button with ripple -->
+            <button id="tt3" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored button" onclick="deleteCanvas()">
+              <i class="material-icons">remove</i>
+              <div class="mdl-tooltip mdl-tooltip--large" for="tt3">delete canvas</div>
+            </button>
+          </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <div class="row">
+            <div class="column">
+              <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="resetSize()">
+                Reset
+              </button>
+            </div>
+            <div class="column">
+              <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="flatScreenMode()">
+                Full
+              </button>
+            </div>
+          </div>
+          <br>
+          <!-- SOUNDS CONTROLS SECTION -->
+          <form>
+            <p class="big">SOUND CONTROLS</p>
+            <div class="row">
+              <div class="column">
+                <p class="big">Spectrum analyser</p>
+              </div>
+              <div class="column">
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">
+                  <input type="checkbox" id="switch-1" class="mdl-switch__input" checked>
+                  <span class="mdl-switch__label"></span>
+                </label>
+              </div>
+            </div>
+            <div class="range-control">
+              <p id="tt4" class="big">Smoothness</p>
+              <div class="mdl-tooltip mdl-tooltip--large" for="tt4">This is how reactive the graphics are to the sound (if the pattern is too shaky set this to the maximum)</div>
+              <input id="smoothSlider" type="range" min="0" max="0.99" step="0.01" value="0.98" data-thumbwidth="20">
+              <output name="rangeVal"></output>
+            </div>
+          </form>
+          <form>
+            <div class="range-control">
+              <p id="tt5" class="big">Min volume</p>
+              <div class="mdl-tooltip mdl-tooltip--large" for="tt5">This will filter the background noises, if playing loud set this to a high value and if quiet a low value</div>
+              <input id="minSlider" class="vol" type="range" min="0" max="29" step="1" value="7" data-thumbwidth="20">
+              <output name="rangeVal"></output>
+            </div>
+          </form>
+          <form>
+            <div class="range-control">
+              <p id="tt6" class="big">Max volume</p>
+              <div class="mdl-tooltip mdl-tooltip--large" for="tt6">This represents the loudest you will play, make sure this is higher than min volume</div>
+              <input id="maxSlider" class="vol" type="range" min="0.5" max="29.5" step="1" value="8.5" data-thumbwidth="20">
+              <output name="rangeVal"></output>
+            </div>
+            <br>
+            <!-- helper div shows up if the user is misusing the min and max volume sliders -->
+             <div id="helper" class="big" style="background: yellow;"></div>
+          </form>
+          <br>
+          <br>
+          <br>
+      </nav>
+      </div>
+    </div>
+  </div>
+
+<!-- hydra canvas and main javascript files are called here -->
+  <canvas id="hydraCanvas" width="800" height="800"></canvas>
+  <script type="text/javascript" src="functions.js"></script>
+  <script type="text/javascript" src="pattern.js"></script>
+
+  <!-- Javascript for the collapsible element (Get started) -->
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    }
+  </script>
+
+  <!-- Slider mechanics to display the value of the slider in a bubble -->
+  <script type="text/javascript">
+    $('input[type="range"]').on('input', function() {
+
+      var control = $(this),
+        controlMin = control.attr('min'),
+        controlMax = control.attr('max'),
+        controlVal = control.val(),
+        controlThumbWidth = control.data('thumbwidth');
+
+      var range = controlMax - controlMin;
+
+      var position = ((controlVal - controlMin) / range) * 100;
+      var positionOffset = Math.round(controlThumbWidth * position / 100) - (controlThumbWidth / 2);
+      var output = control.next('output');
+
+      output
+        .css('left', 'calc(' + position + '% - ' + positionOffset + 'px)')
+        .text(controlVal);
+
+    });
+  </script>
+</body>
+</html>
